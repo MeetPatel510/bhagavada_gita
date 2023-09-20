@@ -29,16 +29,16 @@ class _ChapterDetailPageState extends State<ChapterDetailPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-          child: Text(
+        backgroundColor: Colors.blueGrey,
 
-            Provider.of<ChapterJsonDecodeProvider>(context, listen: false)
-                .chapterJsonDecodeModel
-                .allChapter[chapterIndex]
-                .nameTranslationEnglish,
-            style: TextStyle(decoration: TextDecoration.underline,fontWeight: FontWeight.bold),
-          ),
+        title: Text(
+          Provider.of<ChapterJsonDecodeProvider>(context, listen: false)
+              .chapterJsonDecodeModel
+              .allChapter[chapterIndex]
+              .nameTranslationEnglish,
+          style: TextStyle(decoration: TextDecoration.underline,fontWeight: FontWeight.bold),
         ),
+
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
@@ -49,6 +49,7 @@ class _ChapterDetailPageState extends State<ChapterDetailPage> {
       body: Stack(
         children: [
           Container(
+            color: Colors.grey,
           ),
           Padding(
             padding: const EdgeInsets.all(16),
@@ -107,18 +108,21 @@ class _ChapterDetailPageState extends State<ChapterDetailPage> {
                     ),
                   ),
                   const SizedBox(
-                    height: 5,
+                    height: 15,
                   ),
                   Container(
-                    color: Colors.greenAccent,
-                    child: Text(
-                      Provider.of<ChapterJsonDecodeProvider>(context,
-                              listen: false)
-                          .chapterJsonDecodeModel
-                          .allChapter[chapterIndex]
-                          .chapterSummaryEnglish,
-                      style: const TextStyle(
-                        fontSize: 15,
+                    color: Colors.white38,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        Provider.of<ChapterJsonDecodeProvider>(context,
+                                listen: false)
+                            .chapterJsonDecodeModel
+                            .allChapter[chapterIndex]
+                            .chapterSummaryEnglish,
+                        style: const TextStyle(
+                          fontSize: 15,
+                        ),
                       ),
                     ),
                   ),

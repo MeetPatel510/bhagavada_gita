@@ -23,6 +23,7 @@ class _ShlokDetailPageState extends State<ShlokDetailPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.blueGrey,
         title: Text(Provider.of<ShlokJsonDecodeProvider>(context, listen: false)
             .shlokJsonDecodeModel
             .allShloks[shlokIndex]
@@ -35,18 +36,25 @@ class _ShlokDetailPageState extends State<ShlokDetailPage> {
         ),
       ),
       body: Padding(
+
         padding: const EdgeInsets.all(16),
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
-              Text(
-                Provider.of<ShlokJsonDecodeProvider>(context, listen: false)
-                    .shlokJsonDecodeModel
-                    .allShloks[shlokIndex]
-                    .sanskrit,
-                style: const TextStyle(
-                  fontSize: 22,
+              Container(
+                color: Colors.grey,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    Provider.of<ShlokJsonDecodeProvider>(context, listen: false)
+                        .shlokJsonDecodeModel
+                        .allShloks[shlokIndex]
+                        .sanskrit,
+                    style: const TextStyle(
+                      fontSize: 22,
+                    ),
+                  ),
                 ),
               ),
               const SizedBox(
@@ -55,6 +63,7 @@ class _ShlokDetailPageState extends State<ShlokDetailPage> {
               const Text(
                 "Translation",
                 style: TextStyle(
+                  decoration: TextDecoration.underline,
                   fontSize: 18,
                   fontWeight: FontWeight.w500,
                 ),
@@ -71,7 +80,10 @@ class _ShlokDetailPageState extends State<ShlokDetailPage> {
                               listen: false)
                           .englishLanguage();
                     },
-                    child: const Text('English'),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: const Text('English',style: TextStyle(color: Colors.black)),
+                    ),
                   ),
                   TextButton(
                     onPressed: () {
@@ -79,7 +91,10 @@ class _ShlokDetailPageState extends State<ShlokDetailPage> {
                               listen: false)
                           .hindiLanguage();
                     },
-                    child: const Text('Hindi'),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: const Text('Hindi',style: TextStyle(color: Colors.black),),
+                    ),
                   ),
                   TextButton(
                     onPressed: () {
@@ -87,20 +102,29 @@ class _ShlokDetailPageState extends State<ShlokDetailPage> {
                               listen: false)
                           .gujaratiLanguage();
                     },
-                    child: const Text('Gujarati'),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: const Text('Gujarati',style: TextStyle(color: Colors.black)),
+                    ),
                   ),
                 ],
               ),
               const SizedBox(
                 height: 10,
               ),
-              Text(
-                Provider.of<ShlokJsonDecodeProvider>(context)
-                    .shlokJsonDecodeModel
-                    .allShloks[shlokIndex]
-                    .translation,
-                style: const TextStyle(
-                  fontSize: 16,
+              Container(
+                color:Colors.white54,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    Provider.of<ShlokJsonDecodeProvider>(context)
+                        .shlokJsonDecodeModel
+                        .allShloks[shlokIndex]
+                        .translation,
+                    style: const TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
                 ),
               ),
             ],

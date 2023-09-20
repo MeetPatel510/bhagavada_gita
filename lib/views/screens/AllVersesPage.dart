@@ -16,15 +16,13 @@ class _AllVersesPageState extends State<AllVersesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.cyan,
-        title: Center(
-          child: Text(
-
-            Provider.of<ChapterJsonDecodeProvider>(context, listen: false)
-                .chapterJsonDecodeModel
-                .allChapter[chapterIndex]
-                .nameTranslationEnglish,
-          ),
+        backgroundColor: Colors.blueGrey,
+        title: Text(
+          Provider.of<ChapterJsonDecodeProvider>(context, listen: false)
+              .chapterJsonDecodeModel
+              .allChapter[chapterIndex]
+              .nameTranslationEnglish,
+          style: TextStyle(decoration: TextDecoration.underline),
         ),
         leading: IconButton(
           onPressed: () {
@@ -41,9 +39,9 @@ class _AllVersesPageState extends State<AllVersesPage> {
               .length,
           physics: const BouncingScrollPhysics(),
           itemBuilder: (context, index) => Container(
-            color: Colors.cyan,
+            color: Colors.grey,
             child: Container(
-              color: Colors.cyanAccent,
+              color: Colors.grey,
               child: ListTile(
                 onTap: () {
                   shlokIndex = index;
