@@ -5,7 +5,6 @@
 
 Project Objectives :
 
-
 - Local JSON Bank : 
 - Like Bhagvad Geeta's Verse : 
 - Light & Dark Themes : 
@@ -16,7 +15,6 @@ Project Objectives :
 
 
 Project Technologies :
-
 
 - Dart language
 - Flutter framework with MVC and Provider architecture

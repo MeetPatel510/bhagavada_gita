@@ -15,8 +15,7 @@ class _ShlokDetailPageState extends State<ShlokDetailPage> {
   @override
   void initState() {
     super.initState();
-    // Provider.of<ShlokJsonDecodeProvider>(context, listen: false)
-    //     .englishLanguage();
+
   }
 
   @override

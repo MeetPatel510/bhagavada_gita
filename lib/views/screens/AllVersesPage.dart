@@ -43,8 +43,10 @@ class _AllVersesPageState extends State<AllVersesPage> {
             child: Container(
               color: Colors.grey,
               child: ListTile(
-                onTap: () {
+                onTap: () async{
                   shlokIndex = index;
+                  await Provider.of<ShlokJsonDecodeProvider>(context, listen: false)
+                      .englishLanguage();
                   Navigator.of(context).pushNamed("shlok_detail_page");
                 },
                 leading: Text(
